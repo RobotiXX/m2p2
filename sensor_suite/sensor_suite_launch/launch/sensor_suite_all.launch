@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <launch>
 <group ns="sensor_suite">
     <!-- Ouster LiDAR -->
@@ -12,7 +13,7 @@
     <!--coordinate frame for IMU is set in imu.launch-->
 
     <!-- witmotion_ros IMU -->
-    <include file="$(find witmotion_ros)/launch/witmotion.launch"/>
+    <include file="$(find sensor_suite_launch)/launch/witmotion.launch"/>
     <!--coordinate frame for IMU is set in driver's config yaml-->
     
     <!-- Ublox GPS -->
@@ -22,19 +23,17 @@
     <include file="$(find spinnaker_camera_driver)/launch/camera.launch">
       <arg name="camera_name" value="left_camera_optical"/>
       <arg name="camera_serial" value="24122728"/>
-      <arg name="frame_rate" value="60"/> <!--redundant with external trigger-->
     </include>
 
     <!-- FLIR Right Camera -->
     <include file="$(find spinnaker_camera_driver)/launch/camera.launch">
       <arg name="camera_name" value="right_camera_optical"/>
       <arg name="camera_serial" value="24122731"/>
-      <arg name="frame_rate" value="60"/> <!--redundant with external trigger-->
     </include>
 
 
      <!-- Xenics LWIR -->
-    <include file="$(find camera_aravis)/launch/camera_aravis.launch">
+    <include file="$(find sensor_suite_launch)/launch/camera_aravis.launch">
       <arg name="sensor_name" value="lwir"/>
       <arg name="serial_no" value="Xenics-Ceres-1280-GigE-20746"/>
       <arg name="fps" value="20"/>

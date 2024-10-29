@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <launch>
   <!-- launch sensor_suite -->
   <include file="$(find sensor_suite_launch)/launch/sensor_suite_all.launch">
